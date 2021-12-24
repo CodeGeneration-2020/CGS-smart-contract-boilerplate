@@ -8,11 +8,13 @@ CGS SmartContract boilerplate
 
 * Create account on https://coinmarketcap.com/ get API key and set it as `COIN_MARKET_API_KEY` env
 * Create account on https://dashboard.alchemyapi.io/ and fork etherum mainnet, set `MAIN_NET_FORK_URL` env
-* If you want to support autocompletion you should add `contract-name` to `export type ContractNames`  
+* If you want to support autocompletion you should add `contract-name` to `export type ContractNames`
+* Run `yarn start:remix` in opened browser window go to `File explorer` sidebar and switch workspace from `default_workspace` to `-connect to localhost-`. Now you can test your compile deploy and debug your contracts through `remix`.
 
 ## Commands  
 
 ```shell
+yarn start:remix # Connect your local project to Remix IDE
 yarn compile # Compile contracts
 yarn test # Run tests
 yarn test:gas # Get gas report

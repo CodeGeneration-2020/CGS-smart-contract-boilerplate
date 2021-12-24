@@ -2,6 +2,7 @@
   "name": "hardhat-project",
   "scripts": {
     "compile": "npx hardhat compile",
+    "start:remix": "open https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js && npx remixd -s . -u https://remix.ethereum.org",
     "deploy": "npx hardhat run scripts/deploy.ts",
     "deploy:local": "yarn deploy --network localhost",
     "deploy:hardhat": "yarn deploy --network hardhat",
@@ -14,6 +15,7 @@
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.7",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@remix-project/remixd": "^0.5.5",
     "@typechain/ethers-v5": "^7.2.0",
     "@typechain/hardhat": "^2.3.1",
     "@types/chai": "^4.2.22",
