@@ -8,9 +8,9 @@ const factory = new ContractDeployerFactory();
 describe("CgsToken", () => {
   let instance: CgsToken;
   beforeEach(async () => {
-    instance = await factory
+    instance = (await factory
       .createContractDeployer("CgsToken", [1000])
-      .deploy();
+      .deploy()) as CgsToken;
   });
 
   // For each smart contract method you should have describe inside of describe block related to that contract

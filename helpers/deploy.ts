@@ -1,10 +1,9 @@
 import { ethers } from "hardhat";
-import { ILogger, ContractNames } from "../types";
-
-export class ContractDeployer {
+import { ILogger } from "../types";
+export class ContractDeployer<C extends string> {
   currentNetwork: string | undefined;
   constructor(
-    private contactName: ContractNames,
+    private contactName: C,
     private args: any[] = [],
     private logger: ILogger
   ) {
@@ -39,10 +38,10 @@ export class ContractDeployer {
 export default class ContractDeployerFactory {
   constructor(private logger: ILogger = console) {}
 
-  public createContractDeployer(
-    contactName: ContractNames,
+  public createContractDeployer<C extends string>(
+    contactName: C,
     args: any[]
-  ): ContractDeployer {
+  ): ContractDeployer<C> {
     return new ContractDeployer(contactName, args, this.logger);
   }
 }
